@@ -8,7 +8,7 @@ void main() {
   runApp(MaterialApp(
     home: BlocProvider(
       create: (_) => OnboardingSlideControllerCubit(),
-      child: const OnboardingScreen(),
+      child: OnboardingScreen(),
     ),
   ));
 }

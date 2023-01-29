@@ -11,10 +11,17 @@ class OnboardingSlideControllerCubit
           OnboardingSlideControllerState(0),
         );
 
-  void loadNext() =>
-      emit(OnboardingSlideControllerState(state.activeElementIndex++));
-  void loadPrevious() =>
-      emit(OnboardingSlideControllerState(state.activeElementIndex--));
-  void loadElement(int elementIndex) => emit(
-      OnboardingSlideControllerState(state.activeElementIndex = elementIndex));
+  void loadNext() {
+    emit(OnboardingSlideControllerState(
+      ++state.activeElementIndex,
+    ));
+  }
+
+  void loadPrevious() => emit(OnboardingSlideControllerState(
+        --state.activeElementIndex,
+      ));
+
+  void loadElement(int elementIndex) => emit(OnboardingSlideControllerState(
+        state.activeElementIndex = elementIndex,
+      ));
 }
